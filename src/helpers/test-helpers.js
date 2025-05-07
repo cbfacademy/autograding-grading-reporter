@@ -1,3 +1,5 @@
+const core = require("@actions/core");
+
 const getMaxScoreForTest = (runnerResult) => runnerResult.max_score || 0
 
 const getTotalMaxScore = (runnerResults) => {
@@ -9,6 +11,7 @@ const totalPercentageReducer = (acc, {score, weight, maxScore}) => {
 }
 
 const getTestScore = (runnerResult) => {
+  core.info(runnerResult.tests)
   return runnerResult.tests.reduce((acc, {score}) => acc + (score || 0), 0)
 }
 
