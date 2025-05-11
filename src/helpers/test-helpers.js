@@ -1,4 +1,4 @@
-const core = require("@actions/core");
+const core = require('@actions/core')
 
 const getMaxScoreForTest = (runnerResult) => runnerResult.max_score || 0
 
